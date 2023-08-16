@@ -1,5 +1,7 @@
 package cursojava.classes;
 
+import java.util.Objects;
+
 public class Aluno {
 	
 	private String nome;
@@ -68,15 +70,38 @@ public class Aluno {
 	}
 	
 	public double getMediaNota() {
-		return (nota1 + nota2 + nota3) / 4;
+		return (nota1 + nota2 + nota3) / 3;
 	}
 	
-	public boolean getResultado() {
+	public String getResultado() {
 		double media = this.getMediaNota();
 		if(media>=70) {
-			return true;
+			return "Aluno Aprovado";
 	} else {
-		return false;
+		return "Aluno Reprovado";
 	}
+		
 }
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", cpf=" + cpf
+				+ ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3="
+				+ nota3 + "]";
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(cpf);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		return Objects.equals(cpf, other.cpf);
+	}
+	
 }
