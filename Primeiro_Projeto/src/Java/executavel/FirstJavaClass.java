@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
 
-/*TEST*/
+/**/
 
 public class FirstJavaClass {
 	
