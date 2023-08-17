@@ -13,8 +13,6 @@ public class FirstJavaClass {
 		String idade = JOptionPane.showInputDialog("Qual a idade do aluno?");
 		String cpf = JOptionPane.showInputDialog("Qual o CPF do aluno?");
 		String numDisciplina = JOptionPane.showInputDialog("Quantas Disciplinas o aluno tem na grade?");
-		
-		/*dataNascimento, nomePai, nomeMae nao usados para facilitar debug/compile */
 
 		Aluno aluno = new Aluno();
 
@@ -34,15 +32,18 @@ public class FirstJavaClass {
 			aluno.getDisciplinas().add(disciplina);
 
 		}
-		
+
 		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma Disciplina?");
-			if(escolha == 0) {
+		if (escolha == 0) {
+			int continuarRemover = 0;
+			int posicao = 1;
+			while (continuarRemover == 0) {
 				String removerDisciplina = JOptionPane.showInputDialog("Qual a Disciplina?");
-				aluno.getDisciplinas().remove(Integer.valueOf(removerDisciplina).intValue() -1);
-			} else {
-				System.out.println("Disciplina nao removida");
+				aluno.getDisciplinas().remove(Integer.valueOf(removerDisciplina).intValue() - posicao);
+				posicao++;
+				continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar remover Disciplinas?");
 			}
-		
+		}
 
 		System.out.println(aluno.toString());
 		System.out.println("Media do aluno: " + aluno.getMediaNota());
