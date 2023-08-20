@@ -6,16 +6,9 @@ import java.util.Objects;
 
 import cursojava.constantes.StatusAluno;
 
-public class Aluno {
+public class Aluno extends Pessoa {
 
-	private String nome;
-	private int idade;
-	private String dataNascimento;
-	private String cpf;
-	private String nomeMae;
-	private String nomePai;
 	private int numDisciplina;
-
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
 	public void setDisciplinas(List<Disciplina> disciplinas) {
@@ -126,6 +119,11 @@ public class Aluno {
 			return false;
 		Aluno other = (Aluno) obj;
 		return Objects.equals(cpf, other.cpf);
+	}
+
+	@Override
+	public double notaParaFaculdade() {
+		return 70;
 	}
 
 }

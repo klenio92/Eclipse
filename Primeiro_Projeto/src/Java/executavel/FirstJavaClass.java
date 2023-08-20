@@ -108,6 +108,8 @@ public class FirstJavaClass {
 				for (Disciplina disciplina : aluno.getDisciplinas()) {
 					System.out.println(disciplina);
 				}
+				System.out.println("Nota nacessaria para faculdade: " + aluno.notaParaFaculdade());
+				System.out.println(" ");
 			}
 		}
 	}
