@@ -8,8 +8,8 @@ public abstract class Pessoa {
 	protected String cpf;
 	protected String nomeMae;
 	protected String nomePai;
-	
-	/*metodo abstrato*/
+
+	/* metodo abstrato */
 	public abstract double notaParaFaculdade();
 
 	public String getNome() {
