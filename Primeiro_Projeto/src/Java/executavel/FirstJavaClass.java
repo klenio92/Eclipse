@@ -90,7 +90,6 @@ public class FirstJavaClass {
 						System.out.println(disciplina);
 					}
 					System.out.println(" ");
-
 				}
 				System.out.println("==============================Lista dos Recuperacao================-");
 				for (Aluno aluno : maps.get(StatusAluno.RECUPERACAO)) {
